@@ -21,14 +21,14 @@ public class EmployeePayrollController {
     @RequestMapping(value= {"","/","/get"})
     public ResponseEntity<ResponseDTO> getEmployeePayrollData(){
         EmployeePayrollData employeePayrollData = null;
-        employeePayrollData = new EmployeePayrollData(1,new EmployeePayrollDTO("Srikanth",38000));
+        employeePayrollData = new EmployeePayrollData(1,new EmployeePayrollDTO("Anant",38000));
         ResponseDTO respDTO = new ResponseDTO("Get call Successful:",employeePayrollData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
     @GetMapping("/get/{empId}")
     public ResponseEntity<ResponseDTO> getEmployeePayrollData(@PathVariable("empId") int empId){
         EmployeePayrollData employeePayrollData = null;
-        employeePayrollData = new EmployeePayrollData(empId,new EmployeePayrollDTO("Rakesh",30000));
+        employeePayrollData = new EmployeePayrollData(empId,new EmployeePayrollDTO("Adiya",30000));
         ResponseDTO respDTO = new ResponseDTO("Get call for ID Successful:",employeePayrollData);
         return new ResponseEntity<ResponseDTO>(respDTO,HttpStatus.OK);
     }
