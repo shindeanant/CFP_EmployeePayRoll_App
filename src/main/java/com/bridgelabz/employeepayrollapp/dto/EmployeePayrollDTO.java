@@ -9,7 +9,5 @@ public class EmployeePayrollDTO {
         this.salary = salary;
     }
 
-    public String toString() {
-        return "Name=" + name + " Salary=" + salary;
-    }
+  
 }
