@@ -35,6 +35,11 @@ public class EmployeePayrollController {
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 
+    /**
+     * Purpose : Ability to fetch all employee details from Employee Payroll
+     * 
+     * @return
+     */
     @GetMapping("/get/{empId}")
     public ResponseEntity<ResponseDTO> getEmployeePayrollData(@PathVariable("empId") int empId) {
         EmployeePayrollData employeePayrollData = employeePayrollService.getEmployeePayrollDataById(empId);
@@ -42,12 +47,27 @@ public class EmployeePayrollController {
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
 
+    /**
+     * Purpose : Ability to add employee details in Employee Payroll
+     * 
+     * @param employeeDTO
+     * @return
+     */
+
     @PostMapping("/create")
     public ResponseEntity<ResponseDTO> addEmployeePayrollData(@RequestBody EmployeePayrollDTO empPayrollDTO) {
         EmployeePayrollData employeePayrollData = employeePayrollService.createEmployeePayrollData(empPayrollDTO);
         ResponseDTO respDTO = new ResponseDTO("Create Employee PayrollData:", employeePayrollData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
+
+    /**
+     * Purpose : Ability to update employee details in Employee Payroll using ID
+     * 
+     * @param id
+     * @param employeeDTO
+     * @return
+     */
 
     @PutMapping("/update/{empId}")
     public ResponseEntity<ResponseDTO> updateEmployeePayrollData(@PathVariable("empId") int empId,
@@ -58,6 +78,13 @@ public class EmployeePayrollController {
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
 
     }
+
+    /**
+     * Purpose : Ability to delete employee details from Employee Payroll using ID
+     * 
+     * @param id
+     * @return
+     */
 
     @DeleteMapping("/delete/{empId}")
     public ResponseEntity<ResponseDTO> deleteEmployeePayrollData(@PathVariable("empId") int empId) {
